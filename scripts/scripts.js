@@ -7,7 +7,7 @@ window.onload = () => {
 
 function recipeContains(recipe, filter)
 {    
-    return recipe.name == null ? recipe.id.toLowerCase().includes(filter) : recipe.name.toLowerCase().includes(filter);
+    return recipe.name == null ? recipe.id.toLowerCase().includes(filter) : recipe.name.toLowerCase().includes(filter) || recipe.custom_recipe_string.toLowerCase().includes(filter);
 }
 
 function filter() {
