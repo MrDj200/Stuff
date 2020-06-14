@@ -1,8 +1,9 @@
-function makeRequest(){
+async function makeRequest(){
     var rawurl = "https://raw.githubusercontent.com/experienceddevs/goonstation/master/code/modules/chemistry/Chemistry-Recipes.dm"
-    fetch(rawurl)
+    await fetch(rawurl)
       .then(res => res.text())
       .then((result) => doTheShit(result))
+    filter();
   }
 
 function doTheShit(params) {
