@@ -7,7 +7,7 @@ async function makeRequest(){
   }
 
 function doTheShit(params) {
-    var body = params.replace(/\/\/.*\n/g, "") // Removing pesky comments
+    var body = params.replace(/\/\/.*/g, "") // Removing pesky comments
     var entries = body.match(/\t{2}\w*\n(\t{3}.*\n)*/g)
 
     var finalList = {}
