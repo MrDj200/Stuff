@@ -30,12 +30,29 @@ th
 {
     color: white;
     text-decoration: underline;
+    text-align: left;
+}
+
+th.num_head
+{
+    text-align: right;
 }
 
 td
 {
-    text-align: center;
+    text-align: left;
     color: white;
     font-size: 20px;    
     padding: 16px 0;
 }
+
+td:last-child
+{
+    text-align: right;
+}
+
+table.recipes
+{
+    table-layout: fixed;
+}
+
