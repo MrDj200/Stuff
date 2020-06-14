@@ -1,0 +1,26 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Chem</title>
+        <script src="scripts/stuffHandling.js"></script>
+        <script src="scripts/scripts.js"></script>
+        <link rel="stylesheet" type="text/css" href="style/style.css">
+    </head>
+    <body>
+        <div class="main">
+            <input id="filter" class="filter" type="text" oninput="filter()" placeholder="Filter here">
+            <div class="recipes">
+                <table class="recipes">
+                    <thead>
+                        <th>Chemical<input type="checkbox" id="box_chem" checked class="dj_box" oninput="filter()"></th>
+                        <th>Recipe String<input type="checkbox" id="box_recipe" checked class="dj_box" oninput="filter()"></th>
+                        <th class="num_head">Resulting num</th>
+                    </thead>
+                    <tbody id="recipes">
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
