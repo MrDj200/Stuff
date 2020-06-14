@@ -5,26 +5,39 @@ window.onload = () => {
     filter();
 }
 
-function recipeContains(recipe, filter)
+function recipeContains(recipe, filter, useChemNames, useRecipeNames)
 {    
-    return recipe.name == null ? recipe.id?.toLowerCase().includes(filter) : recipe.name.toLowerCase().includes(filter) || recipe.custom_recipe_string.toLowerCase().includes(filter);
+    var returner = false;
+    if (useChemNames) {
+        if (recipe.id == null) {
+            console.log(`Having a problem with ${JSON.stringify(recipe)}\n(id is null)`);
+        }
+        returner = recipe.name == null ? recipe.id?.toLowerCase().includes(filter) : recipe.name.toLowerCase().includes(filter)
+    }
+    if (useRecipeNames) {
+        returner = returner || recipe.custom_recipe_string.toLowerCase().includes(filter);
+    }
+    return returner;
 }
 
 function filter() {
     let table = document.getElementById("recipes");
     let filter = document.getElementById("filter").value;
 
-    table.innerHTML = "<tr><th>Chemical</th><th>Recipe String</th><th class=\"num_head\">Resulting num</th></tr>"
+    table.innerHTML = "";
 
     if(result == null){
         return;
     }
 
+    var useChemNames = document.getElementById("box_chem").checked;
+    var useRecipeNames = document.getElementById("box_recipe").checked;
+
     var myKeys = Object.keys(result);
 
     myKeys.forEach(key => {
         var curRecipe = result[key]
-        if (filter != "" && !recipeContains(curRecipe, filter)) {
+        if (filter != "" && !recipeContains(curRecipe, filter, useChemNames, useRecipeNames)) {
             return
         }
 

@@ -10,7 +10,15 @@
         <div class="main">
             <input id="filter" class="filter" type="text" oninput="filter()" placeholder="Filter here">
             <div class="recipes">
-                <table id="recipes" class="recipes">
+                <table class="recipes">
+                    <thead>
+                        <th>Chemical<input type="checkbox" id="box_chem" checked class="dj_box" oninput="filter()"></th>
+                        <th>Recipe String<input type="checkbox" id="box_recipe" checked class="dj_box" oninput="filter()"></th>
+                        <th class="num_head">Resulting num</th>
+                    </thead>
+                    <tbody id="recipes">
+                        
+                    </tbody>
                 </table>
             </div>
         </div>

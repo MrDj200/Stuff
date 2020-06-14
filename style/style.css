@@ -23,7 +23,14 @@ body
 
 .recipes
 {
+    margin-top:10px;
     width: 100%;
+    border-collapse: collapse;
+}
+
+tbody tr:hover
+{
+    background-color: #3f4552;
 }
 
 th
@@ -55,4 +62,3 @@ table.recipes
 {
     table-layout: fixed;
 }
-
