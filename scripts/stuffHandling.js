@@ -11,8 +11,9 @@ async function makeRequest(){
 function doTheShit(params) {
     Debug.raw = params;
     var body = params.replace(/\/\/.*/g, "") // Removing pesky comments
+    body = body.replace(/\/\*([\s\S]+?)\*\//g, "") // Removing block commments
     Debug.noComments = body;
-    var entries = body.match(/\t{2}\w*.*\n(\t{3}.*\n)*/g)
+    var entries = body.match(/^\t{2}\w*.*\n(\t{3}.*\n)*/gm)
     Debug.matches = entries;
 
     var finalList = {}
