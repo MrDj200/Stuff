@@ -1,3 +1,5 @@
+var Debug = {}
+
 async function makeRequest(){
     var rawurl = "https://raw.githubusercontent.com/experienceddevs/goonstation/master/code/modules/chemistry/Chemistry-Recipes.dm"
     await fetch(rawurl)
@@ -7,15 +9,21 @@ async function makeRequest(){
   }
 
 function doTheShit(params) {
+    Debug.raw = params;
     var body = params.replace(/\/\/.*/g, "") // Removing pesky comments
-    var entries = body.match(/\t{2}\w*\n(\t{3}.*\n)*/g)
+    Debug.noComments = body;
+    var entries = body.match(/\t{2}\w*.*\n(\t{3}.*\n)*/g)
+    Debug.matches = entries;
 
     var finalList = {}
     entries.forEach(element => {
+        if (element == null) {
+            return
+        }
         var temp = getChemObj(element)
         if (temp !== null && !isEmptyObject(temp) && 'required_reagents' in temp) {
-        temp.custom_recipe_string = makeRecipeString(temp.required_reagents)
-        finalList[temp.id == null ? temp.result : temp.id] = temp
+            temp.custom_recipe_string = makeRecipeString(temp.required_reagents)
+            finalList[temp.id == null ? temp.result : temp.id] = temp
         }
     });
 
