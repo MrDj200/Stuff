@@ -14,6 +14,8 @@ function filter() {
     let table = document.getElementById("recipes");
     let filter = document.getElementById("filter").value;
 
+    table.innerHTML = "<tr><th>Chemical</th><th>Recipe String</th><th class=\"num_head\">Resulting num</th></tr>"
+
     if(result == null){
         return;
     }
