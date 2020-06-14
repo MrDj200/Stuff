@@ -35,6 +35,16 @@ function filter() {
 
     var myKeys = Object.keys(result);
 
+    myKeys.sort((a, b) => {
+        if (result[a].name < result[b].name) {
+            return -1;
+        }
+        if (result[a].name > result[b].name) {
+            return 1;
+        }
+        return 0;
+    });
+
     myKeys.forEach(key => {
         var curRecipe = result[key]
         if (filter != "" && !recipeContains(curRecipe, filter, useChemNames, useRecipeNames)) {
