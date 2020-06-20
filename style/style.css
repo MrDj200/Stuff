@@ -1,45 +1,38 @@
-body
-{
-    font-family: Sans-serif;
-    background-color: #282c34;
+body {
+  font-family: Sans-serif;
+  background-color: #282c34;
 }
 
-.main
-{
-    margin: auto;
-    width: 50%;
-    padding-top: 5%;
+.main {
+  margin: auto;
+  width: 50%;
+  padding-top: 5%;
 }
 
-tbody tr:hover
-{
-    background-color: #3f4552;
+tbody tr:hover {
+  background-color: #3f4552;
 }
 
-th
-{
-    color: white;
-    text-decoration: underline;
-    text-align: left;
+th {
+  color: white;
+  text-decoration: underline;
+  text-align: left;
 }
 
-td
-{
-    color: white;
-    font-size: 20px;    
-    padding: 16px 0;
+td {
+  color: white;
+  font-size: 20px;
+  padding: 16px 0;
 }
 
-td:first-child
-{
-    text-align: left;
+td:first-child {
+  text-align: left;
 }
 
-td:last-child
-{
-    text-align: right;
+td:last-child {
+  text-align: right;
 }
 
 a {
-    color: #909298
+  color: #909298;
 }
