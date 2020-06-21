@@ -1,0 +1,48 @@
+body {
+  font-family: Sans-serif;
+  background-color: #282c34;
+  margin: auto;
+  width: 80%;
+  padding-top: 5%;
+  font-size: 20px;
+  color: white;
+}
+
+#suggested_char {
+  text-decoration: underline;
+}
+
+/*Search box*/
+.filter {
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  border-radius: 4px;
+  border-width: 1px;
+  border-color: #374350;
+  font-size: larger;
+}
+/*Main table*/
+.dj_table {
+  margin-top: 10px;
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+/*Table headers*/
+.dj_table_head {
+  color: white;
+  text-decoration: underline;
+  text-align: left;
+}
+/*Table rows*/
+td {
+  text-align: left;
+  color: white;
+  font-size: 20px;
+  padding: 16px 0;
+}
+/*Table row hover*/
+tr:hover {
+  background-color: #3f4552;
+}
