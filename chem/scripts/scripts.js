@@ -61,7 +61,7 @@ function filter() {
 
     let row = document.createElement("tr");
     let arr = [
-      curRecipe.name,
+      curRecipe.name == undefined ? curRecipe.id : curRecipe.name,
       curRecipe.custom_recipe_string,
       curRecipe.result_amount,
     ];
