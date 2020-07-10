@@ -13,21 +13,17 @@ function recipeContains(recipe, filter, useChemNames, useRecipeNames) {
         `Having a problem with ${JSON.stringify(recipe)}\n(id is null)`
       );
     }
-    returner =
-      recipe.name == null
-        ? recipe.id?.toLowerCase().includes(filter)
-        : recipe.name.toLowerCase().includes(filter);
+    returner = recipe.name == null ? recipe.id?.toLowerCase().includes(filter) : recipe.name.toLowerCase().includes(filter);
   }
   if (useRecipeNames) {
-    returner =
-      returner || recipe.custom_recipe_string.toLowerCase().includes(filter);
+    returner = returner || recipe.custom_recipe_string.toLowerCase().includes(filter);
   }
   return returner;
 }
 
 function filter() {
   let table = document.getElementById("recipes");
-  let filter = document.getElementById("filter").value;
+  let filter = document.getElementById("filter").value.toLowerCase();
 
   table.innerHTML = "";
 
@@ -52,10 +48,7 @@ function filter() {
 
   myKeys.forEach((key) => {
     var curRecipe = result[key];
-    if (
-      filter != "" &&
-      !recipeContains(curRecipe, filter, useChemNames, useRecipeNames)
-    ) {
+    if ( filter != "" && !recipeContains(curRecipe, filter, useChemNames, useRecipeNames) ) {
       return;
     }
 
