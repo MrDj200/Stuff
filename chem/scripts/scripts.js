@@ -55,7 +55,7 @@ function filter() {
     let row = document.createElement("tr");
     let arr = [
       curRecipe.name == undefined ? curRecipe.id : curRecipe.name,
-      underlineBases(curRecipe.custom_recipe_string),
+      underlineBases(curRecipe),
       curRecipe.result_amount,
     ];
     for (let a of arr) {
@@ -67,9 +67,19 @@ function filter() {
   });
 }
 
-function underlineBases(recipeString){
+function underlineBases(recipe){
+  let recipeString = recipe.custom_recipe_string;
   bases.forEach(base => {
     recipeString = recipeString.replace(base, `<span class="ingredientBase">${base}</span>`);
   });
-  return recipeString;
+  return recipeString + addTemperature(recipe);
+}
+
+function addTemperature(recipe){
+  let temp = recipe.required_temperature;
+  if (!temp) {
+    return "";
+  }
+  temp = temp.replace("T0C", 274);
+  return ` <span class="temperature">@${eval(temp)} K</span>`;
 }

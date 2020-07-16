@@ -57,3 +57,7 @@ table.recipes {
   text-decoration: underline;
   font-style: italic;
 }
+
+.temperature {
+  color: red;
+}
