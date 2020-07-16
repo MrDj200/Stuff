@@ -55,14 +55,21 @@ function filter() {
     let row = document.createElement("tr");
     let arr = [
       curRecipe.name == undefined ? curRecipe.id : curRecipe.name,
-      curRecipe.custom_recipe_string,
+      underlineBases(curRecipe.custom_recipe_string),
       curRecipe.result_amount,
     ];
     for (let a of arr) {
       let cell = document.createElement("td");
-      cell.innerText = a;
+      cell.innerHTML = a;
       row.append(cell);
     }
     table.appendChild(row);
   });
+}
+
+function underlineBases(recipeString){
+  bases.forEach(base => {
+    recipeString = recipeString.replace(base, `<span class="ingredientBase">${base}</span>`);
+  });
+  return recipeString;
 }

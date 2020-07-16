@@ -52,3 +52,8 @@ td:last-child {
 table.recipes {
   table-layout: fixed;
 }
+
+.ingredientBase {
+  text-decoration: underline;
+  font-style: italic;
+}
