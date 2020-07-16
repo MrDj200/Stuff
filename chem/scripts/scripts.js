@@ -80,6 +80,7 @@ function addTemperature(recipe){
   if (!temp) {
     return "";
   }
-  temp = temp.replace("T0C", 274);
+  let T0C = 274;
+  let T20C = 294;
   return ` <span class="temperature">@${eval(temp)} K</span>`;
 }
